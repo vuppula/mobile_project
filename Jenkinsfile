@@ -8,7 +8,7 @@
 	rtMaven.tool = 'maven3'
         
         timestamps {
-             {
+             
                 stage("Initialize Build") {
                     echo "EXECUTING ON THE NODE: $env.NODE_NAME"
           
@@ -30,6 +30,6 @@
                     rtMaven.run pom: 'pom.xml', goals: 'clean install'
 		    
 		 }
-            }
+            
         }
     }
