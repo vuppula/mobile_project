@@ -1,4 +1,4 @@
-    node('STAY_NODES') {
+    node('all') {
         def server = Artifactory.server 'central'
         def rtMaven = Artifactory.newMavenBuild()
         def buildInfo
