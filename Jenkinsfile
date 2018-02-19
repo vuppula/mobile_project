@@ -8,7 +8,7 @@
 	rtMaven.tool = 'maven3'
         
         timestamps {
-            ansiColor('xterm') {
+             {
                 stage("Initialize Build") {
                     echo "EXECUTING ON THE NODE: $env.NODE_NAME"
           
