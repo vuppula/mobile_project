@@ -4,7 +4,7 @@ node {
   
   
   script {
-  if (env.BRANCH_NAME == 'master') {
+  if (env.BRANCH_NAME == '*mas') {
     stage ('Some Stage 1 for master') {
 	echo "**************DID CHANGES TO MASTER BRANCH ****************"
         def server = Artifactory.server 'central'
