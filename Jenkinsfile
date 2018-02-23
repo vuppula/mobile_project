@@ -4,9 +4,9 @@ node {
   
   
   script {
-  if (env.BRANCH_NAME == '*mas') {
+  if (env.BRANCH_NAME == 'feature/*') {
     stage ('Some Stage 1 for master') {
-	echo "**************DID CHANGES TO MASTER BRANCH ****************"
+	echo "**************DID CHANGES TO FEATURE BRANCH ****************"
         def server = Artifactory.server 'central'
         def rtMaven = Artifactory.newMavenBuild()
         def buildInfo
