@@ -4,9 +4,9 @@ node {
   
   
   script {
-  if (env.BRANCH_NAME == 'master') {
+  if (env.BRANCH_NAME == 'mas*') {
     stage ('Some Stage 1 for master') {
-	echo "**************MASTER BRANCH ****************"
+	echo "**************DID CHANGES TO MASTER BRANCH ****************"
         def server = Artifactory.server 'central'
         def rtMaven = Artifactory.newMavenBuild()
         def buildInfo
@@ -55,7 +55,7 @@ node {
   
 
   
-  else if (env.BRANCH_NAME == 'develop') {
+  else if (env.BRANCH_NAME == 'dev*') {
     stage ('Some stage branch step') {
       def server = Artifactory.server 'central'
         def rtMaven = Artifactory.newMavenBuild()
@@ -69,7 +69,7 @@ node {
              
                 stage("Initialize Build") {
                     echo "EXECUTING ON THE NODE: $env.NODE_NAME"
-					echo "WORKING ON DEVELOP BRANCH"
+					echo "*****************ITS DEV* JOB WORKING ON DEVELOP BRANCH"
           
                 }
                  // Mark the code checkout 'stage'....
