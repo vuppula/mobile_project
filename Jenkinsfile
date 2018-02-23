@@ -11,7 +11,7 @@
              
                 stage("Initialize Build") {
                     echo "EXECUTING ON THE NODE: $env.NODE_NAME"
-			echo " ********************this id branch BRANCH1 ************************"
+			echo " ********************this id branch BRANCH2 ************************"
           
                 }
                  // Mark the code checkout 'stage'....
