@@ -92,11 +92,12 @@ node {
 	
     
 
-  }
+
 
   else {
     sh 'echo "Branch not applicable to Jenkins... do nothing"'
   }
   }
+}
 }
 }
