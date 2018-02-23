@@ -11,6 +11,7 @@
              
                 stage("Initialize Build") {
                     echo "EXECUTING ON THE NODE: $env.NODE_NAME"
+			echo " ********************this id branch BRANCH1 ************************"
           
                 }
                  // Mark the code checkout 'stage'....
@@ -27,7 +28,7 @@
                     rtMaven.deployer.deployArtifacts = true // Disable artifacts deployment to artifactory
                 }
                 stage('mvn goals execution') {
-                    rtMaven.run pom: 'pom.xml', goals: 'clean install'
+                    rtMaven.run pom: 'pom.xml', goals: ' release:clean release:prepare release:perform'
 		    
 		 }
             
