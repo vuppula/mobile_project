@@ -90,7 +90,7 @@ node {
     }
     }
 	
-    }
+    
 
   }
 
@@ -98,4 +98,5 @@ node {
     sh 'echo "Branch not applicable to Jenkins... do nothing"'
   }
   }
+}
 }
