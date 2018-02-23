@@ -24,7 +24,10 @@ node {
                  // Mark the code checkout 'stage'....
                 stage ('Checkout') {
                    // Checkout code from repository
-                   checkout scm
+                  // checkout scm
+				  git ([url: 'ssh://git@stash.agilysys.local:7999/mblp/mobilepaymentinterface.git', branch: 'master'])
+
+
                  }
 
                 stage('Artifactory configuration') {
@@ -66,12 +69,14 @@ node {
              
                 stage("Initialize Build") {
                     echo "EXECUTING ON THE NODE: $env.NODE_NAME"
+					echo "WORKING ON DEVELOP BRANCH"
           
                 }
                  // Mark the code checkout 'stage'....
                 stage ('Checkout') {
                    // Checkout code from repository
-                   checkout scm
+                   //checkout scm
+				   git ([url: 'ssh://git@stash.agilysys.local:7999/mblp/mobilepaymentinterface.git', branch: 'develop'])
                  }
 
                 stage('Artifactory configuration') {
