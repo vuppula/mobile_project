@@ -1,4 +1,5 @@
 node {
+deleteDir()
   checkout scm
   def workspace = pwd()
   
