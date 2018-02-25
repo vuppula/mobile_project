@@ -16,6 +16,16 @@
 		<developerConnection>scm:git:git@github.com:vuppula/mobile_project.git</developerConnection>
 	  <tag>HEAD</tag>
   </scm>
+	
+	
+		<developers>
+		<developer>
+			<email>rajeshkumarvuppula@gmail.com</email>
+			<name>vuppula</name>
+			<url>https://github.com/vuppula</url>
+			<id>vuppula</id>
+		</developer>
+	</developers>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
