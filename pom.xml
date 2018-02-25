@@ -4,7 +4,7 @@
 
   <groupId>com.mycompany</groupId>
   <artifactId>mobile</artifactId>
-  <version>1.0</version>
+  <version>1.0-SHNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>mobile</name>
