@@ -9,6 +9,13 @@
 
   <name>mobile</name>
   <url>http://maven.apache.org</url>
+  
+      <scm>
+		<url>https://github.com/vuppula/mobile_project</url>
+		<connection>scm:git:git://github.com/vuppula/mobile_project.git</connection>
+		<developerConnection>scm:git:git@github.com:vuppula/mobile_project.git</developerConnection>
+	  <tag>HEAD</tag>
+  </scm>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,4 +29,14 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
+  	 <build>
+ <plugins> 
+  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.3</version>
+      </plugin>
+ </plugins>
+ </build>
 </project>
