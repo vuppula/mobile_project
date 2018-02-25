@@ -39,7 +39,7 @@ deleteDir()
                     rtMaven.deployer.deployArtifacts = true // Disable artifacts deployment to artifactory
                 }
                 stage('mvn goals execution') {
-                    rtMaven.run pom: 'pom.xml', goals: 'clean install'
+                    rtMaven.run pom: 'pom.xml', goals: 'clean release:clean release:prepare release:perform'
 		    
 		 }
             
