@@ -55,8 +55,8 @@ deleteDir()
   
   
 
-   else if (env.BRANCH_NAME == '${env.BRANCH_NAME}') {
-	   echo "=====fffffffffffff========================${env.BRANCH_NAME}  ================================================="
+   else  {
+	   echo "=====ffffffffffff========================${env.BRANCH_NAME}  ================================================="
     stage ('Some stage branch step') {
       def server = Artifactory.server 'central'
         def rtMaven = Artifactory.newMavenBuild()
