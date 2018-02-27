@@ -52,8 +52,8 @@ deleteDir()
 	   echo "=====ffffffffffff========================${env.BRANCH_NAME}  ================================================="
     stage ('Some stage branch step') {
 
-                    rtMaven.run pom: 'pom.xml', goals: 'clean install'
-	
+              //      rtMaven.run pom: 'pom.xml', goals: 'clean install'
+sh 'mvn clean install'
             
         
     }
