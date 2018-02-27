@@ -2,6 +2,13 @@ node {
 deleteDir()
   checkout scm
  // def workspace = pwd()
+	                stage('Artifactory configuration') {
+                    rtMaven.tool = 'maven3'
+                    rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local', server: server
+                   // rtMaven.resolver releaseRepo: 'repo', snapshotRepo: 'repo', server: server
+                    buildInfo = Artifactory.newBuildInfo()
+                    rtMaven.deployer.deployArtifacts = true // Disable artifacts deployment to artifactory
+                }
   
   
   script {
@@ -31,13 +38,7 @@ deleteDir()
 
                  }
 
-                stage('Artifactory configuration') {
-                    rtMaven.tool = 'maven3'
-                    rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local', server: server
-                   // rtMaven.resolver releaseRepo: 'repo', snapshotRepo: 'repo', server: server
-                    buildInfo = Artifactory.newBuildInfo()
-                    rtMaven.deployer.deployArtifacts = true // Disable artifacts deployment to artifactory
-                }
+
                 stage('mvn goals execution') {
                     rtMaven.run pom: 'pom.xml', goals: 'clean release:clean release:prepare release:perform'
 		    
