@@ -1,12 +1,13 @@
 node {
+deleteDir()
   checkout scm
   def workspace = pwd()
   
   
   script {
-  if (env.BRANCH_NAME == "feature*") {
+  if (env.BRANCH_NAME == 'master') {
     stage ('Some Stage 1 for master') {
-	echo "**************DID CHANGES TO FEATURE BRANCH ****************"
+	echo "**************DID CHANGES TO MASTER BRANCH ****************"
         def server = Artifactory.server 'central'
         def rtMaven = Artifactory.newMavenBuild()
         def buildInfo
@@ -38,7 +39,7 @@ node {
                     rtMaven.deployer.deployArtifacts = true // Disable artifacts deployment to artifactory
                 }
                 stage('mvn goals execution') {
-                    rtMaven.run pom: 'pom.xml', goals: 'clean install'
+                    rtMaven.run pom: 'pom.xml', goals: 'clean release:clean release:prepare release:perform'
 		    
 		 }
             
@@ -54,8 +55,8 @@ node {
   
   
 
-  
-  else if (env.BRANCH_NAME == 'dev*') {
+   else  {
+	   echo "=====ffffffffffff========================${env.BRANCH_NAME}  ================================================="
     stage ('Some stage branch step') {
       def server = Artifactory.server 'central'
         def rtMaven = Artifactory.newMavenBuild()
@@ -94,14 +95,6 @@ node {
         }
     }
     }
-	
-    
-
-
-
-  else {
-    sh 'echo "Branch not applicable to Jenkins... do nothing"'
-  }
  
 }
 }
